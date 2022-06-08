@@ -1,0 +1,44 @@
+[
+    {
+        "nombre": "Ferrari",
+        "jefe_equipo": "Mattia Binotto",
+        "sede": "Maranello, Italia",
+        "chasis": "F1-75",
+        "motor": "Ferrari",
+        "campeonatos": 16,
+        "poles":233,
+        "pilotos":["Charles Leclerc","carlos sains"]
+    },
+    {
+        "nombre": "Oracle Red Bull Racing",
+        "jefe_equipo": "Christian Horner",
+        "sede": "Milton Keynes, Reino Unido",
+        "chasis": "RB18",
+        "motor": "Red Bull Powertrains",
+        "campeonatos": 4,
+        "poles": 75,
+        "pilotos":["Max Verstappen","Checo Perez"]
+    },
+    {
+        
+        "nombre": "Mercedes-AMG",
+        "jefe_equipo": "Toto Wolff",
+        "sede": "Brackley, Reino Unido",
+        "chasis": "W13",
+        "motor": "Mercedes",
+        "campeonatos": 8,
+        "poles": 127,
+        "pilotos":["Lewis Hamilton","George Russell"]
+    },
+    {
+        "nombre": "McLaren",
+        "jefe_equipo": "Andreas Seidl",
+        "sede": "Woking, Reino Unido",
+        "chasis": "MCL36",
+        "motor": "Mercedes",
+        "campeonatos": 8,
+        "poles": 156,
+        "pilotos":["Daniel Ricciardo","Lando Norris"]
+    }
+
+]

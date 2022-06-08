@@ -20,15 +20,27 @@ const apiSchema = new mongoose.Schema({
     campeonatos: {
         type: Number
     },
+    poles:{
+        type: Number
+    },
+    pilotos:[
+        {piloto1: {type: Number}}, {piloto2: {type: Number}}
+     ],
     pilotos: {
         piloto1:{
-            edad: {
-                type: Number
+            nacimiento: {
+                type: Date
             },
             pais : {
                 type: String
             },
             campeonatos: {
+                type: Number
+            },
+            podios: {
+                type: Number
+            },
+            poles: {
                 type: Number
             },
             equipo: {
@@ -39,13 +51,19 @@ const apiSchema = new mongoose.Schema({
             }
         },
         piloto2:{
-            edad: {
-                type: Number
+            nacimiento: {
+                type: Date
             },
             pais : {
                 type: String
             },
             campeonatos: {
+                type: Number
+            },
+            podios: {
+                type: Number
+            },
+            poles: {
                 type: Number
             },
             equipo: {

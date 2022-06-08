@@ -2,21 +2,21 @@
     {
         "nombre": "Ferrari",
         "jefe_equipo": "Mattia Binotto",
-        "sede": "Maranello, Italy",
+        "sede": "Maranello, Italia",
         "chasis": "F1-75",
         "motor": "Ferrari",
         "campeonatos": 16,
         "pilotos": {
             "Charles Leclerc": {
-                "edad": "24 años",
+                "nacimiento": "24 años",
                 "pais": "Monaco",
                 "campeonatos": 0,
                 "podios": 16,
                 "equipo": "Ferrari",
                 "numero_coche": 16
             },
-            "carlos sains": {
-                "edad": "27 años",
+            "Carlos Sains": {
+                "nacimiento": "27 años",
                 "pais": "España",
                 "campeonatos": 0,
                 "podios": 8,
@@ -26,29 +26,266 @@
         }
     },
     {
-        "nombre": "",
-        "jefe_equipo": "",
-        "sede": "",
-        "chasis": "",
-        "motor": "",
-        "campeonatos": 16,
+        "nombre": "Oracle Red Bull Racing",
+        "jefe_equipo": "Christian Horner",
+        "sede": "Milton Keynes, Reino Unido",
+        "chasis": "RB18",
+        "motor": "Red Bull Powertrains",
+        "campeonatos": 4,
+        "poles": 75,
         "pilotos": {
-            "Charles Leclerc": {
-                "edad": 0,
-                "pais": "",
-                "campeonatos": 0,
-                "podios": 0,
-                "equipo": "",
-                "numero_coche": 0
+            "maxVerstappen": {
+                "nacimiento":"1997-09-30T05:00:00.000+00:00",
+                "pais": "Holanda",
+                "campeonatos": 1,
+                "podios": 64,
+                "poles": 14,
+                "equipo": "Oracle Red Bull Racing",
+                "numero_coche": 1
             },
-            "carlos sains": {
-                "edad": 0,
-                "pais": "",
+            "checoPerez": {
+                "nacimiento": "1990-01-26T05:00:00.000+00:00",
+                "pais": "Mexico",
+                "campeonatos": 0,
+                "podios": 18,
+                "poles":1,
+                "equipo": "Oracle Red Bull Racing",
+                "numero_coche": 11
+            }
+        }
+    },
+    {
+        "nombre": "Mercedes-AMG",
+        "jefe_equipo": "Toto Wolff",
+        "sede": "Brackley, Reino Unido",
+        "chasis": "W13",
+        "motor": "Mercedes",
+        "campeonatos": 8,
+        "poles": 127,
+        "pilotos": {
+            "Lewis Hamilton": {
+                "nacimiento": "1985-01-07T05:00:00.000+00:00",
+                "pais": "Reino Unido",
+                "campeonatos": 7,
+                "podios": 183,
+                "poles": 103,
+                "equipo": "Mercedes-AMG",
+                "numero_coche": 44
+            },
+            "George Russell": {
+                "nacimiento": "1998-02-15T05:00:00.000+00:00",
+                "pais": "Reino Unido",
+                "campeonatos": 0,
+                "podios": 3,
+                "poles":0,
+                "equipo": "Mercedes-AMG",
+                "numero_coche": 63
+            }
+        }
+    },
+    {
+        "nombre": "McLaren",
+        "jefe_equipo": "Andreas Seidl",
+        "sede": "Woking, Reino Unido",
+        "chasis": "MCL36",
+        "motor": "Mercedes",
+        "campeonatos": 8,
+        "poles": 156,
+        "pilotos": {
+            "Daniel Ricciardo": {
+                "nacimiento": "1989-07-1T05:00:00.000+00:00",
+                "pais": "Australia",
+                "campeonatos": 0,
+                "podios": 32,
+                "poles": 3,
+                "equipo": "McLaren",
+                "numero_coche": 3
+            },
+            "Lando Norris": {
+                "nacimiento": "1999-11-13T05:00:00.000+00:00",
+                "pais": "Reino Unido",
+                "campeonatos": 0,
+                "podios": 6,
+                "poles":1,
+                "equipo": "McLaren",
+                "numero_coche": 4
+            }
+        }
+    },
+    {
+        "nombre": "Alfa Romeo",
+        "jefe_equipo": "Frédéric Vasseur",
+        "sede": "Hinwil, Suiza",
+        "chasis": "C42",
+        "motor": "Ferrari",
+        "campeonatos": 0,
+        "poles": 1,
+        "pilotos": {
+            "Valtteri Bottas": {
+                "nacimiento": "1989-08-28T05:00:00.000+00:00",
+                "pais": "Finlandia",
+                "campeonatos": 0,
+                "podios": 67,
+                "poles": 20,
+                "equipo": "Alfa Romeo",
+                "numero_coche": 77
+            },
+            "Zhou Guanyu": {
+                "nacimiento": "1999-05-30T05:00:00.000+00:00",
+                "pais": "China",
                 "campeonatos": 0,
                 "podios": 0,
-                "equipo": "",
-                "numero_coche": 0
+                "poles":0,
+                "equipo": "Alfa Romeo",
+                "numero_coche": 24
+            }
+        }
+    },
+    {
+        "nombre": "BWT Alpine",
+        "jefe_equipo": "Otmar Szafnauer",
+        "sede": "Enstone, Reino Unido",
+        "chasis": "A522",
+        "motor": "Renault",
+        "campeonatos": 2,
+        "poles": 20,
+        "pilotos": {
+            "Fernando Alonso": {
+                "nacimiento": "1981-07-29T05:00:00.000+00:00",
+                "pais": "España",
+                "campeonatos": 2,
+                "podios": 98,
+                "poles": 22,
+                "equipo": "BWT Alpine",
+                "numero_coche": 14
+            },
+            "Esteban Ocon": {
+                "nacimiento": "1996-09-17T05:00:00.000+00:00",
+                "pais": "Francia",
+                "campeonatos": 0,
+                "podios": 2,
+                "poles":0,
+                "equipo": "BWT Alpine",
+                "numero_coche": 31
+            }
+        }
+    },
+    {
+        "nombre": "AlphaTauri",
+        "jefe_equipo": "Franz Tost",
+        "sede": "Faenza, Italia",
+        "chasis": "AT03",
+        "motor": "Red Bull",
+        "campeonatos": 0,
+        "poles": 1,
+        "pilotos": {
+            "Pierre Gasly": {
+                "nacimiento": "1996-02-7T05:00:00.000+00:00",
+                "pais": "Francia",
+                "campeonatos": 0,
+                "podios": 3,
+                "poles": 0,
+                "equipo": "AlphaTauri",
+                "numero_coche": 10
+            },
+            "Yuki Tsunoda": {
+                "nacimiento": "2000-05-11T05:00:00.000+00:00",
+                "pais": "Japón",
+                "campeonatos": 0,
+                "podios": 0,
+                "poles":0,
+                "equipo": "AlphaTauri",
+                "numero_coche": 22
+            }
+        }
+    },
+    {
+        "nombre": "Haas",
+        "jefe_equipo": "Guenther Steiner",
+        "sede": "Kannapolis, Estados Unidos",
+        "chasis": "VF-22",
+        "motor": "Ferrari",
+        "campeonatos": 0,
+        "poles": 0,
+        "pilotos": {
+            "Mick Schumacher": {
+                "nacimiento": "1999-03-22T05:00:00.000+00:00",
+                "pais": "Alemania",
+                "campeonatos": 0,
+                "podios": 0,
+                "poles": 0,
+                "equipo": "Haas",
+                "numero_coche": 47
+            },
+            "Kevin Magnussen": {
+                "nacimiento": "1992-10-05T05:00:00.000+00:00",
+                "pais": "Dinamarca",
+                "campeonatos": 0,
+                "podios": 1,
+                "poles":0,
+                "equipo": "Haas",
+                "numero_coche": 20
+            }
+        }
+    },
+    {
+        "nombre": "Aston Martin",
+        "jefe_equipo": "Mike Krack",
+        "sede": "Silverstone, Reino Unido",
+        "chasis": "AMR22",
+        "motor": "Mercedes",
+        "campeonatos": 0,
+        "poles": 1,
+        "pilotos": {
+            "Sebastian Vettel": {
+                "nacimiento": "1987-07-03T05:00:00.000+00:00",
+                "pais": "Aleemania",
+                "campeonatos": 4,
+                "podios": 122,
+                "poles": 57,
+                "equipo": "Aston Martin",
+                "numero_coche": 5
+            },
+            "Lance Stroll": {
+                "nacimiento": "1998-10-29T05:00:00.000+00:00",
+                "pais": "Canada",
+                "campeonatos": 0,
+                "podios": 3,
+                "poles":1,
+                "equipo": "Aston Martin",
+                "numero_coche": 18
+            }
+        }
+    },
+    {
+        "nombre": "Williams Racing",
+        "jefe_equipo": "Jost Capito",
+        "sede": "Grove, Reino Unido",
+        "chasis": "FW44",
+        "motor": "Mercedes",
+        "campeonatos": 9,
+        "poles": 128,
+        "pilotos": {
+            "Nicholas Latifi": {
+                "nacimiento": "1995-06-29T05:00:00.000+00:00",
+                "pais": "Canada",
+                "campeonatos": 0,
+                "podios": 0,
+                "poles": 0,
+                "equipo": "Williams Racing",
+                "numero_coche": 6
+            },
+            "Alexander Albon": {
+                "nacimiento": "1996-03-23T05:00:00.000+00:00",
+                "pais": "Tailandia",
+                "campeonatos": 0,
+                "podios": 2,
+                "poles":0,
+                "equipo": "Williams Racing",
+                "numero_coche": 23
             }
         }
     }
 ]
+
+

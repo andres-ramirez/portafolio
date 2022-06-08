@@ -1,11 +1,15 @@
 :host {
     display: block;
-    background-color: #DAD57C;
 }
 
 .bg-red{
     background-color: #f80000;
 }
+
+.bg-gray{
+    background-color: #D3D3D3;
+}
+
 
 .h1-principal{
     font-size: 4rem;

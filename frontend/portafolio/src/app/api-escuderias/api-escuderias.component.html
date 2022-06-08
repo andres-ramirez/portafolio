@@ -1,10 +1,277 @@
+<!-- Cabecero -->
 <div class="container-fluid bg-red">
-    <div class="row border border-danger border-3">
-        <div class="col-10 text-center bg-success d-flex justify-content-center align-items-center">
-            <h1 class="h1-principal text-center text-white fw-bold">Escuderias y pilotos de F1 2022</h1>
-        </div>
-        <div class="col">
-            <img src="../assets/logo.png" class="img-fluid d-block mx-auto" width="400" height="auto" alt="logo">
-        </div>
+  <div class="row">
+    <div
+      class="col-10 text-center d-flex justify-content-center align-items-center"
+    >
+      <h1 class="h1-principal text-center text-white fw-bold">
+        Escuderias y pilotos de F1 2022
+      </h1>
     </div>
+    <div class="col">
+      <img
+        src="../assets/logo.png"
+        class="img-fluid d-block mx-auto"
+        width="400"
+        height="auto"
+        alt="logo"
+      />
+    </div>
+  </div>
+</div>
+
+<!-- Selector -->
+<div class="container">
+  <select
+    class="form-select border border-primary border-3"
+    aria-label="Default select example"
+    [(ngModel)]="opcionSelecionada"
+  >
+    <option selected>Escuderias</option>
+    <option>Pilotos</option>
+    <option>Campeonatos</option>
+    <option>Poles</option>
+  </select>
+</div>
+
+<!-- Contenedor de la escuderia -->
+<div *ngIf="opcionSelecionada == 'Escuderias'">
+  <div
+    class="container mt-5 border border-dark border-2 bg-gray"
+    *ngFor="let datos of datosApi"
+  >
+    <div class="row">
+      <!-- Columna de la info de la escuderia -->
+      <div class="col">
+        <table
+          class="table table-borderless h-100 table-secondary table-striped"
+        >
+          <thead>
+            <tr class="">
+              <th scope="col">
+                <h4 class="text-uppercase">{{ datos.nombre }}</h4>
+              </th>
+              <th scope="col">
+                <img
+                  src="../assets/logosEquipos/{{ datos.nombre }}.jpg"
+                  class="img-fluid"
+                  width="75"
+                  height="auto"
+                  alt="logo{{ datos.nombre }}"
+                />
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Jefe De Equipo</th>
+              <td>{{ datos.jefe_equipo }}</td>
+            </tr>
+            <tr>
+              <th scope="row">Sede</th>
+              <td>{{ datos.sede }}</td>
+            </tr>
+            <tr>
+              <th scope="row">Chasis</th>
+              <td>{{ datos.chasis }}</td>
+            </tr>
+            <tr>
+              <th scope="row">Motor</th>
+              <td>{{ datos.motor }}</td>
+            </tr>
+            <tr>
+              <th scope="row">Campeonatos</th>
+              <td>{{ datos.campeonatos }}</td>
+            </tr>
+            <tr>
+              <th scope="row">Pole Position</th>
+              <td>{{ datos.poles }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Columna de los pilotos -->
+      <div class="col">
+        <div class="container-fluid h-100">
+          <div class="row h-100">
+            <!-- Columna piloto1 -->
+            <div class="col" *ngFor="let dataP of datos.pilotos | keyvalue">
+              <div class="row">
+                <img
+                  src="../assets/pilotos/{{ dataP.key }}.jpg"
+                  class="img-fluid"
+                  width="250"
+                  height="300"
+                  alt="piloto1"
+                />
+              </div>
+              <div class="row">
+                <table class="table table-borderless w-100 h-100">
+                  <body class="w-100 bg-gray">
+                    <tr>
+                      <th>Nombre</th>
+                      <td>{{ dataP.key }}</td>
+                    </tr>
+                    <tr>
+                      <th>Edad</th>
+                      <td>{{ dataP.value.nacimiento | Edad }}</td>
+                    </tr>
+                    <tr>
+                      <th>Pais</th>
+                      <td>{{ dataP.value.pais }}</td>
+                    </tr>
+                    <tr>
+                      <th>Campeonatos</th>
+                      <td>{{ dataP.value.campeonatos }}</td>
+                    </tr>
+                    <tr>
+                      <th>Podios</th>
+                      <td>{{ dataP.value.podios }}</td>
+                    </tr>
+                    <tr>
+                      <th>Pole Positions</th>
+                      <td>{{ dataP.value.poles }}</td>
+                    </tr>
+                    <tr>
+                      <th>Equipo</th>
+                      <td>{{ dataP.value.equipo }}</td>
+                    </tr>
+                    <tr>
+                      <th>Numero coche</th>
+                      <td>{{ dataP.value.numero_coche }}</td>
+                    </tr>
+                  </body>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Final contenedor escuderia -->
+</div>
+
+<!-- Mosttrando solo los pilotos -->
+<div class="container" *ngIf="opcionSelecionada == 'Pilotos'">
+  <div class="container" *ngFor="let datos of datosApi">
+    <div class="col" *ngFor="let dataP of datos.pilotos | keyvalue">
+      <div class="row">
+        <img
+          src="../assets/pilotos/{{ dataP.key }}.jpg"
+          class="img-fluid"
+          width="250"
+          height="300"
+          alt="piloto1"
+        />
+      </div>
+      <div class="row">
+        <table class="table table-borderless w-100 h-100">
+          <body class="w-100 bg-gray">
+            <tr>
+              <th>Nombre</th>
+              <td>{{ dataP.key }}</td>
+            </tr>
+            <tr>
+              <th>Edad</th>
+              <td>{{ dataP.value.nacimiento | Edad }}</td>
+            </tr>
+            <tr>
+              <th>Pais</th>
+              <td>{{ dataP.value.pais }}</td>
+            </tr>
+            <tr>
+              <th>Campeonatos</th>
+              <td>{{ dataP.value.campeonatos }}</td>
+            </tr>
+            <tr>
+              <th>Podios</th>
+              <td>{{ dataP.value.podios }}</td>
+            </tr>
+            <tr>
+              <th>Pole Positions</th>
+              <td>{{ dataP.value.poles }}</td>
+            </tr>
+            <tr>
+              <th>Equipo</th>
+              <td>{{ dataP.value.equipo }}</td>
+            </tr>
+            <tr>
+              <th>Numero coche</th>
+              <td>{{ dataP.value.numero_coche }}</td>
+            </tr>
+          </body>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Termina mostrando solo los pilotos -->
+
+<!-- mostranbdo escuderias por campeonatos -->
+
+<div *ngIf="opcionSelecionada == 'Campeonatos'">
+  <div
+    class="container mt-5 border border-dark border-2 bg-gray"
+    *ngFor="let datos of datosApi | ordenarCampeonatos: 'campeonatos'"
+  >
+    <div class="row">
+      <!-- Columna de la info de la escuderia -->
+      <div class="col">
+        <table
+          class="table table-borderless h-100 table-secondary table-striped"
+        >
+          <thead>
+            <tr class="">
+              <th scope="col">
+                <h4 class="text-uppercase">{{ datos.nombre }}</h4>
+              </th>
+              <th scope="col">
+                <img
+                  src="../assets/logosEquipos/{{ datos.nombre }}.jpg"
+                  class="img-fluid"
+                  width="75"
+                  height="auto"
+                  alt="logo{{ datos.nombre }}"
+                />
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Jefe De Equipo</th>
+              <td>{{ datos.jefe_equipo }}</td>
+            </tr>
+            <tr>
+              <th scope="row">Sede</th>
+              <td>{{ datos.sede }}</td>
+            </tr>
+            <tr>
+              <th scope="row">Chasis</th>
+              <td>{{ datos.chasis }}</td>
+            </tr>
+            <tr>
+              <th scope="row">Motor</th>
+              <td>{{ datos.motor }}</td>
+            </tr>
+            <tr>
+              <th scope="row">Campeonatos</th>
+              <td>{{ datos.campeonatos }}</td>
+            </tr>
+            <tr>
+              <th scope="row">Pole Position</th>
+              <td>{{ datos.poles }}</td>
+            </tr>
+            <tr>
+              <th scope="row">Pilotos</th>
+              <td>
+                <p>{{ datos.pilotosA[0] }} / {{ datos.pilotosA[1] }}</p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
 </div>
