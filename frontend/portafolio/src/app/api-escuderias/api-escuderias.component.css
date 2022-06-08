@@ -1,0 +1,13 @@
+:host {
+    display: block;
+    background-color: #DAD57C;
+}
+
+.bg-red{
+    background-color: #f80000;
+}
+
+.h1-principal{
+    font-size: 4rem;
+    font-family: 'Secular One', sans-serif;
+}

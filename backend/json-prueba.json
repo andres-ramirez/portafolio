@@ -1,0 +1,54 @@
+[
+    {
+        "nombre": "Ferrari",
+        "jefe_equipo": "Mattia Binotto",
+        "sede": "Maranello, Italy",
+        "chasis": "F1-75",
+        "motor": "Ferrari",
+        "campeonatos": 16,
+        "pilotos": {
+            "Charles Leclerc": {
+                "edad": "24 años",
+                "pais": "Monaco",
+                "campeonatos": 0,
+                "podios": 16,
+                "equipo": "Ferrari",
+                "numero_coche": 16
+            },
+            "carlos sains": {
+                "edad": "27 años",
+                "pais": "España",
+                "campeonatos": 0,
+                "podios": 8,
+                "equipo": "Ferrari",
+                "numero_coche": 55
+            }
+        }
+    },
+    {
+        "nombre": "",
+        "jefe_equipo": "",
+        "sede": "",
+        "chasis": "",
+        "motor": "",
+        "campeonatos": 16,
+        "pilotos": {
+            "Charles Leclerc": {
+                "edad": 0,
+                "pais": "",
+                "campeonatos": 0,
+                "podios": 0,
+                "equipo": "",
+                "numero_coche": 0
+            },
+            "carlos sains": {
+                "edad": 0,
+                "pais": "",
+                "campeonatos": 0,
+                "podios": 0,
+                "equipo": "",
+                "numero_coche": 0
+            }
+        }
+    }
+]
