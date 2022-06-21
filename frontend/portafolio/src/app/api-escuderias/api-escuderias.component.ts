@@ -12,10 +12,6 @@ export class ApiEscuderiasComponent implements OnInit {
 
   datosApi: Escuderia []= [];
 
-  datosEscuderias: Escuderias[]=[];
-
-  ordenarCampeonatos: Escuderia[]= [];
-
   opcionSelecionada = "Escuderias";
   
   constructor(private apiService: ApiService) { }
@@ -28,11 +24,7 @@ export class ApiEscuderiasComponent implements OnInit {
   obtenerDatos(){
     
     this.apiService.getDatos().subscribe(data =>{
-      this.datosApi= data;
-      this.ordenarCampeonatos = this.datosApi.sort((a, b)=>{
-        return (b.campeonatos - a.campeonatos);
-      });
-      console.log(this.ordenarCampeonatos);
+      this.datosApi= data;      
       console.log(this.datosApi);      
                   
     }, error =>{

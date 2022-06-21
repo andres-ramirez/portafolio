@@ -9,7 +9,6 @@ import { ApiEscuderiasComponent } from './api-escuderias/api-escuderias.componen
 import { PipeApiPipe } from './pipes/pipe-edad.pipe';
 import { FormsModule } from '@angular/forms';
 import { OrdenarCampeonatosPipe } from './pipes/ordenar-campeonatos.pipe';
-import { ApiPilotosComponent } from './api-pilotos/api-pilotos.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +17,6 @@ import { ApiPilotosComponent } from './api-pilotos/api-pilotos.component';
     ApiEscuderiasComponent,
     PipeApiPipe,
     OrdenarCampeonatosPipe,
-    ApiPilotosComponent
   ],
   imports: [
     BrowserModule,
