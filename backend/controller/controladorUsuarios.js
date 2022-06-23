@@ -2,7 +2,7 @@ const modelUsers = require("../models/model.user");
 const jwt = require("jsonwebtoken");
 const {encriptar, comparar} = require("../helpers/encriptar");
 
-exports.obtenerUsers = async (req, res) => {
+exports.obtenerUsuarios = async (req, res) => {
   try {
     const data = await modelUsers.find();
     res.json(data);
@@ -12,7 +12,7 @@ exports.obtenerUsers = async (req, res) => {
   }
 };
 
-exports.crearUser = async (req, res) => {
+exports.crearUsuario = async (req, res) => { 
   try {    
     const { usuario, contraseña, role } = req.body;
      const passEcriptado = await encriptar(contraseña);

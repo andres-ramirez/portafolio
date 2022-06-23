@@ -39,6 +39,67 @@
         "campeonatos": 8,
         "poles": 156,
         "pilotos":["Daniel Ricciardo","Lando Norris"]
+    },
+    {
+        "nombre": "Alfa Romeo",
+        "jefe_equipo": "Frédéric Vasseur",
+        "sede": "Hinwil, Suiza",
+        "chasis": "C42",
+        "motor": "Ferrari",
+        "campeonatos": 0,
+        "poles": 1,
+        "pilotos":["Valtteri Bottas", "Zhou Guanyu"]
+    },
+    {
+        "nombre": "BWT Alpine",
+        "jefe_equipo": "Otmar Szafnauer",
+        "sede": "Enstone, Reino Unido",
+        "chasis": "A522",
+        "motor": "Renault",
+        "campeonatos": 2,
+        "poles": 20,
+        "pilotos":["Fernando Alonso", "Esteban Ocon"]
+    },
+    {
+        "nombre": "AlphaTauri",
+        "jefe_equipo": "Franz Tost",
+        "sede": "Faenza, Italia",
+        "chasis": "AT03",
+        "motor": "Red Bull",
+        "campeonatos": 0,
+        "poles": 1,
+        "pilotos":["Pierre Gasly", "Yuki Tsunoda"]
+    },
+    {
+        "nombre": "Haas",
+        "jefe_equipo": "Guenther Steiner",
+        "sede": "Kannapolis, Estados Unidos",
+        "chasis": "VF-22",
+        "motor": "Ferrari",
+        "campeonatos": 0,
+        "poles": 0,
+        "pilotos":[ "Mick Schumacher", "Kevin Magnussen"]
+    },
+    {
+        "nombre": "Aston Martin",
+        "jefe_equipo": "Mike Krack",
+        "sede": "Silverstone, Reino Unido",
+        "chasis": "AMR22",
+        "motor": "Mercedes",
+        "campeonatos": 0,
+        "poles": 1,
+        "pilotos":["Sebastian Vettel", "Lance Stroll"]
+    },
+    {
+        "nombre": "Williams Racing",
+        "jefe_equipo": "Jost Capito",
+        "sede": "Grove, Reino Unido",
+        "chasis": "FW44",
+        "motor": "Mercedes",
+        "campeonatos": 9,
+        "poles": 128,
+        "pilotos":["Nicholas Latifi", "Alexander Albon"]
     }
+
 
 ]

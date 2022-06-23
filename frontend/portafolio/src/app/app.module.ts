@@ -8,16 +8,16 @@ import { HttpClientModule } from '@angular/common/http';
 import { ApiEscuderiasComponent } from './api-escuderias/api-escuderias.component';
 import { PipeApiPipe } from './pipes/pipe-edad.pipe';
 import { FormsModule } from '@angular/forms';
-import { OrdenarCampeonatosPipe } from './pipes/ordenar-campeonatos.pipe';
+import { InicioSesionComponent } from './inicio-sesion/inicio-sesion.component';
 
 @NgModule({
-  declarations: [
+  declarations: [	
     AppComponent,
     PrincipalComponent,
     ApiEscuderiasComponent,
     PipeApiPipe,
-    OrdenarCampeonatosPipe,
-  ],
+    InicioSesionComponent
+   ],
   imports: [
     BrowserModule,
     AppRoutingModule,

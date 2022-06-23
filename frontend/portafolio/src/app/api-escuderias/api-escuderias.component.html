@@ -10,14 +10,12 @@
       <img src="../assets/logo.png" class="img-fluid d-block mx-auto" width="400" height="auto" alt="logo" />
     </div>
   </div>
-</div>
+</div> <!-- /Cabecero -->
 
 <!-- Selector -->
 <div class="container">
   <div class="row">
     <div class="col">
-
-
       <select class="form-select border border-primary border-3" aria-label="Default select example"
         [(ngModel)]="opcionSelecionada">
         <option selected>Escuderias</option>
@@ -25,20 +23,21 @@
       </select>
     </div>
 
-    <div class="col">
-      <!-- Boton -->
-      <button class="btn btn-primary btn-lg btn-block">
+    <!-- Boton -->
+    <div class="col"> 
+      <button class="btn btn-primary btn-lg btn-block" (click)="inicioSesion()">
         Iniciar sesión
       </button>
-    </div>
+    </div>  <!-- /Boton -->
 
   </div>
-</div>
+</div> <!-- Fin Selector -->
 
 <!-- Contenedor de la escuderia -->
 <div *ngIf="opcionSelecionada == 'Escuderias'">
-  <div class="container mt-5 border border-dark border-2 bg-gray" *ngFor="let datos of datosApi">
+  <div class="container mt-5 border border-dark border-2 bg-gray" *ngFor="let datos of datosEscuderias">
     <div class="row">
+
       <!-- Columna de la info de la escuderia -->
       <div class="col">
         <table class="table table-borderless h-100 table-secondary table-striped">
@@ -56,7 +55,7 @@
           <tbody>
             <tr>
               <th scope="row">Jefe De Equipo</th>
-              <td>{{ datos.jefe_equipo }}</td>
+              <td>{{ datos.nombre }}</td>
             </tr>
             <tr>
               <th scope="row">Sede</th>
@@ -78,110 +77,66 @@
               <th scope="row">Pole Position</th>
               <td>{{ datos.poles }}</td>
             </tr>
+            <tr>
+              <th scope="row">Pilotos</th>
+              <td><p> {{ datos.pilotos[0] }} / {{datos.pilotos[1]}} </p> </td>
+            </tr>
           </tbody>
         </table>
-      </div>
+      </div> <!-- /Columna de la info de la escuderia -->
+      
 
-      <!-- Columna de los pilotos -->
-      <div class="col">
-        <div class="container-fluid h-100">
-          <div class="row h-100">
-            <!-- Columna piloto1 -->
-            <div class="col" *ngFor="let dataP of datos.pilotos | keyvalue">
-              <div class="row">
-                <img src="../assets/pilotos/{{ dataP.key }}.jpg" class="img-fluid" width="250" height="300"
-                  alt="piloto1" />
-              </div>
-              <div class="row">
-                <table class="table table-borderless w-100 h-100">
-
-                  <body class="w-100 bg-gray">
-                    <tr>
-                      <th>Nombre</th>
-                      <td>{{ dataP.key }}</td>
-                    </tr>
-                    <tr>
-                      <th>Edad</th>
-                      <td>{{ dataP.value.nacimiento | Edad }}</td>
-                    </tr>
-                    <tr>
-                      <th>Pais</th>
-                      <td>{{ dataP.value.pais }}</td>
-                    </tr>
-                    <tr>
-                      <th>Campeonatos</th>
-                      <td>{{ dataP.value.campeonatos }}</td>
-                    </tr>
-                    <tr>
-                      <th>Podios</th>
-                      <td>{{ dataP.value.podios }}</td>
-                    </tr>
-                    <tr>
-                      <th>Pole Positions</th>
-                      <td>{{ dataP.value.poles }}</td>
-                    </tr>
-                    <tr>
-                      <th>Equipo</th>
-                      <td>{{ dataP.value.equipo }}</td>
-                    </tr>
-                    <tr>
-                      <th>Numero coche</th>
-                      <td>{{ dataP.value.numero_coche }}</td>
-                    </tr>
-                  </body>
-                </table>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
   </div>
-  <!-- Final contenedor escuderia -->
-</div>
+  
+</div> <!-- Fin Contenedor de la escuderia -->
 
 <!-- Mostrando solo los pilotos -->
 <div class="container w-50 bg-gray" *ngIf="opcionSelecionada == 'Pilotos'">
 
-  <div class="row" *ngFor="let datos of datosApi">
+  <div class="row">
 
-    <div class="col bg-success" *ngFor="let dataP of datos.pilotos | keyvalue">
-      <img src="../assets/pilotos/{{ dataP.key }}.jpg" class="img-fluid" width="300" height="300" alt="piloto1" />
+    <div class="col bg-success" *ngFor="let dataP of datosPilotos">
+      <img src="../assets/pilotos/{{ dataP.nombre }}.jpg" class="img-fluid" width="300" height="300" alt="piloto1" />
 
       <table class="table table-borderless">
 
         <body class="w-100 bg-gray">
           <tr>
             <th>Nombre</th>
-            <td>{{ dataP.key }}</td>
+            <td>{{ dataP.nombre }}</td>
           </tr>
           <tr>
             <th>Edad</th>
-            <td>{{ dataP.value.nacimiento | Edad }}</td>
+            <td>{{ dataP.nacimiento | Edad }}</td>
           </tr>
           <tr>
             <th>Pais</th>
-            <td>{{ dataP.value.pais }}</td>
+            <td>{{ dataP.pais }}</td>
           </tr>
           <tr>
             <th>Campeonatos</th>
-            <td>{{ dataP.value.campeonatos }}</td>
+            <td>{{ dataP.campeonatos }}</td>
+          </tr>
+          <tr>
+            <th>Victorias</th>
+            <td>{{ dataP.victorias }}</td>
           </tr>
           <tr>
             <th>Podios</th>
-            <td>{{ dataP.value.podios }}</td>
+            <td>{{ dataP.podios }}</td>
           </tr>
           <tr>
             <th>Pole Positions</th>
-            <td>{{ dataP.value.poles }}</td>
+            <td>{{ dataP.poles }}</td>
           </tr>
           <tr>
             <th>Equipo</th>
-            <td>{{ dataP.value.equipo }}</td>
+            <td>{{ dataP.equipo }}</td>
           </tr>
           <tr>
             <th>Numero coche</th>
-            <td>{{ dataP.value.numero_coche }}</td>
+            <td>{{ dataP.numero_coche }}</td>
           </tr>
         </body>
       </table>
@@ -190,3 +145,5 @@
 </div>
 
 <!-- Termina mostrando solo los pilotos -->
+
+

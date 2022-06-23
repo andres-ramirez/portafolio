@@ -1,7 +1,7 @@
 const express = require ("express");
-const dbConect = require("./config/dbConect");
-const datosEscuderias = require ('./routes/rutas');
-const datosUsers = require ('./routes/rutas.user');
+const dbConect = require("./config/conexionDB");
+const datosEscuderias = require ('./routes/rutasApi');
+const datosUsers = require ('./routes/rutasUsuarios');
 const dotenv = require ('dotenv');
 const cors = require ('cors');
 
