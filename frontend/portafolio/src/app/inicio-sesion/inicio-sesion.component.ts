@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { ApiService } from '../servicios/api.service';
 
 @Component({
   selector: 'app-inicio-sesion',
@@ -7,9 +9,33 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InicioSesionComponent implements OnInit {
 
-  constructor() { }
+  user = {
+    usuario: '',
+    pass: ''
+  }
+  
+
+  constructor(private autenticar: ApiService, private router: Router) { }
 
   ngOnInit() {
   }
+
+  iniciarSesion(){
+    console.log(this.user);
+    
+    this.autenticar.inicairSesion(this.user).subscribe(
+      (data) => {
+        console.log(data);
+        localStorage.setItem('token', data.token);
+        this.router.navigate(['/edicion-pilotos']);
+      },
+      (error) => {
+        console.log(error);
+        alert('Usuario o contraseña incorrectos');
+      } 
+    )
+  }
+    
+  
 
 }

@@ -7,7 +7,7 @@ const checkAuth = async (req, res, next) => {
     if (decoded) {
         next();
     }   else {
-        res.status(401).send("No autorizado");        
+       return res.status(401).send("No autorizado");        
     }
 }
 

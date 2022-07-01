@@ -9,14 +9,19 @@ import { ApiEscuderiasComponent } from './api-escuderias/api-escuderias.componen
 import { PipeApiPipe } from './pipes/pipe-edad.pipe';
 import { FormsModule } from '@angular/forms';
 import { InicioSesionComponent } from './inicio-sesion/inicio-sesion.component';
+import { EdicionPilotosComponent } from './edicion-pilotos/edicion-pilotos.component';
+import { EdicionEscuderiasComponent } from './edicion-escuderias/edicion-escuderias.component';
+import { RutasEdicionGuard } from './rutas-edicion.guard';
 
 @NgModule({
-  declarations: [	
+  declarations: [			
     AppComponent,
     PrincipalComponent,
     ApiEscuderiasComponent,
     PipeApiPipe,
-    InicioSesionComponent
+    InicioSesionComponent,
+      EdicionPilotosComponent,
+      EdicionEscuderiasComponent
    ],
   imports: [
     BrowserModule,
@@ -24,7 +29,9 @@ import { InicioSesionComponent } from './inicio-sesion/inicio-sesion.component';
     HttpClientModule,
     FormsModule
   ],
-  providers: [],
+  providers: [ 
+    RutasEdicionGuard
+   ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

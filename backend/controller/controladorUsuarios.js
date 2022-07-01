@@ -14,11 +14,11 @@ exports.obtenerUsuarios = async (req, res) => {
 
 exports.crearUsuario = async (req, res) => { 
   try {    
-    const { usuario, contraseña, role } = req.body;
-     const passEcriptado = await encriptar(contraseña);
+    const { usuario, pass, role } = req.body;
+     const passEcriptado = await encriptar(pass);
     const user = await modelUsers.create({
       usuario,
-      contraseña: passEcriptado,
+      pass: passEcriptado,
       role
     });    
 
@@ -34,27 +34,26 @@ exports.crearUsuario = async (req, res) => {
   }
 };
 
-exports.iniciarSesion = async (req, res) => {
+exports.iniciarSesion = async (req, res,) => {
   try {
-    const { usuario, contraseña } = req.body;
-    const user = await modelUsers.findOne({usuario});
-    const checkPass = await comparar(contraseña, user.contraseña);
-    if (!user) return res.status(404).send("El usuario no existe");
-    if (!checkPass) return res.status(401).send("Contraseña incorrecta");
+    const { usuario, pass } = req.body;
+    const user = await modelUsers.findOne({ usuario });
+    if (!user) {
+      return res.status(404).send("El usuario no existe");
+      
+    }
+    const checkPass = await comparar(pass, user.pass);
+    const tokenSesion = jwt.sign({ id: user._id, role: user.role }, process.env.JWT_SECRET, { expiresIn: "1h", });
 
-    const token = jwt.sign(
-      {
-        id: user._id,
-        role: user.role
-      },
-      process.env.JWT_SECRET,
-      {
-        expiresIn: "1h",
-      }
-    );
-    res.status(200).json({
-      token
-    });
+    if (checkPass) {
+      res.send({
+        data: user,
+        token: tokenSesion
+      })
+    } else {
+      res.status(404).send("La contraseña es incorrecta");
+    }
+
   } catch (error) {
     console.log(error);
     res.status(500).res("Error en el post");
