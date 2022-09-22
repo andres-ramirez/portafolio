@@ -1,0 +1,88 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand ps-5" routerLink="/api-f1">Api</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end pe-5" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page">Editar Pilotos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/edicion-escuderias">Editar Escuderias</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<br><br>
+
+<div class="container mx-auto w-50" *ngFor="let dataP of apiService.pilotos">
+
+  <div class="">
+    <p> {{dataP.nombre}} </p>
+  </div>
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModalT" (click)="llenarDatos(dataP)">
+    Editar piloto
+  </button>
+
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModalT" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="mb-3">
+            <label for="formGroupExampleInput" class="form-label">Nombre</label>
+            <input type="text" class="form-control" id="formGroupExampleInput" placeholder="" disabled [(ngModel)]="piloto.nombre">
+          </div>
+          <div class="mb-3">
+            <label for="formGroupExampleInput2" class="form-label">Nacimiento</label>
+            <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="" disabled [(ngModel)]="piloto.nacimiento">
+          </div>
+          <div class="mb-3">
+            <label for="formGroupExampleInput2" class="form-label">País</label>
+            <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="" disabled [(ngModel)]="piloto.pais">
+          </div>
+          <div class="mb-3">
+            <label for="formGroupExampleInput" class="form-label">Campeonatos</label>
+            <input type="number" class="form-control" id="formGroupExampleInput" placeholder="" disabled [(ngModel)]="piloto.campeonatos">
+          </div>
+          <div class="mb-3">
+            <label for="formGroupExampleInput2" class="form-label">Podios</label>
+            <input type="number" class="form-control" id="formGroupExampleInput2" placeholder="" [(ngModel)]="piloto.podios">
+          </div>
+          <div class="mb-3">
+            <label for="formGroupExampleInput2" class="form-label">Victorias</label>
+            <input type="number" class="form-control" id="formGroupExampleInput2" placeholder="" [(ngModel)]="piloto.victorias">
+          </div>
+          <div class="mb-3">
+            <label for="formGroupExampleInput" class="form-label">Poles</label>
+            <input type="number" class="form-control" id="formGroupExampleInput" placeholder="" [(ngModel)]="piloto.poles">
+          </div>
+          <div class="mb-3">
+            <label for="formGroupExampleInput2" class="form-label">Equipo</label>
+            <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="" disabled [(ngModel)]="piloto.equipo">
+          </div>
+          <div class="mb-3">
+            <label for="formGroupExampleInput2" class="form-label">Numero de coche</label>
+            <input type="number" class="form-control" id="formGroupExampleInput2" placeholder="" disabled [(ngModel)]="piloto.numero_coche">
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" (click)="editarPiloto()">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+

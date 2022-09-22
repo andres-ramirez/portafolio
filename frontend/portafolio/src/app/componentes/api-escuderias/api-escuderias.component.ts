@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ApiService } from '../servicios/api.service';
-import { Escuderia } from '../modelos/api.model';
-import { Escuderias } from '../modelos/modelo.escuderias';
-import { Pilotos } from '../modelos/modelo.pilotos';
+import { ApiService } from 'src/app//servicios/api.service';
+import { Escuderias } from 'src/app//modelos/modelo.escuderias';
+import { Pilotos } from 'src/app//modelos/modelo.pilotos';
 import { Router } from '@angular/router';
 
 @Component({
@@ -11,8 +10,6 @@ import { Router } from '@angular/router';
   styleUrls: ['./api-escuderias.component.css']
 })
 export class ApiEscuderiasComponent implements OnInit {
-
-  datosApi: Escuderia []= [];
 
   datosEscuderias: Escuderias []= [];
 
@@ -23,20 +20,10 @@ export class ApiEscuderiasComponent implements OnInit {
   constructor(private apiService: ApiService, private router:Router) { }
 
   ngOnInit(): void {    
-    this.obtenerDatos();  
     this.obtenerEscuderias();
     this.obtenerPilotos();
     
-  } 
-  
-  obtenerDatos(){    
-    this.apiService.getDatos().subscribe(data =>{
-      this.datosApi= data;                   
-    }, error =>{
-      console.log(error);
-      
-    })    
-  } 
+  }   
 
   obtenerEscuderias(){
     this.apiService.obtenerEscuderias().subscribe(data =>{
@@ -60,16 +47,6 @@ export class ApiEscuderiasComponent implements OnInit {
   inicioSesion(){
       this.router.navigate(['/iniciarsesion']);
   }
-  
-
-
-
-
-
-
-
-
-
   
 
 }

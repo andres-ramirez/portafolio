@@ -1,0 +1,8 @@
+<div class="container mx-auto w-50" *ngFor="let data of apiServiceE.escuderias">
+
+  <div class="">
+    <p> {{data.nombre}} </p>
+  </div>
+  <button mat-raised-button color="primary" (click)="opendialog(data)" >Abre el modal</button>  
+
+</div>

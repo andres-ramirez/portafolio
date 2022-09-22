@@ -3,15 +3,23 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { PrincipalComponent } from './principal/principal.component';
-import { HttpClientModule } from '@angular/common/http';
-import { ApiEscuderiasComponent } from './api-escuderias/api-escuderias.component';
+import { PrincipalComponent } from './componentes/principal/principal.component';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { ApiEscuderiasComponent } from './componentes/api-escuderias/api-escuderias.component';
 import { PipeApiPipe } from './pipes/pipe-edad.pipe';
 import { FormsModule } from '@angular/forms';
-import { InicioSesionComponent } from './inicio-sesion/inicio-sesion.component';
-import { EdicionPilotosComponent } from './edicion-pilotos/edicion-pilotos.component';
-import { EdicionEscuderiasComponent } from './edicion-escuderias/edicion-escuderias.component';
+import { InicioSesionComponent } from './componentes/inicio-sesion/inicio-sesion.component';
+import { EdicionPilotosComponent } from './componentes/edicion-pilotos/edicion-pilotos.component';
+import { EdicionEscuderiasComponent, modalEscuderiasComponent } from './componentes/edicion-escuderias/edicion-escuderias.component';
 import { RutasEdicionGuard } from './rutas-edicion.guard';
+import { JwtInterceptorInterceptor } from './interceptor/jwt-interceptor.interceptor';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatButtonModule } from '@angular/material/button';
+import { MatFormFieldModule, } from '@angular/material/form-field';
+import {MaterialExampleModule} from '../material.module';
+
 
 @NgModule({
   declarations: [			
@@ -20,17 +28,29 @@ import { RutasEdicionGuard } from './rutas-edicion.guard';
     ApiEscuderiasComponent,
     PipeApiPipe,
     InicioSesionComponent,
-      EdicionPilotosComponent,
-      EdicionEscuderiasComponent
-   ],
+    EdicionPilotosComponent,
+    EdicionEscuderiasComponent,
+    modalEscuderiasComponent   
+    
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule,
+    MatDialogModule,
+    MatButtonModule,
+    MatFormFieldModule,
+    MaterialExampleModule
   ],
   providers: [ 
-    RutasEdicionGuard
+    RutasEdicionGuard,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: JwtInterceptorInterceptor,
+      multi: true      
+    },
    ],
   bootstrap: [AppComponent]
 })

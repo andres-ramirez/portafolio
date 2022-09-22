@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { ApiService } from '../servicios/api.service';
+import { ApiService } from 'src/app/servicios/api.service';
+
+
 
 @Component({
   selector: 'app-inicio-sesion',
@@ -23,7 +25,7 @@ export class InicioSesionComponent implements OnInit {
   iniciarSesion(){
     console.log(this.user);
     
-    this.autenticar.inicairSesion(this.user).subscribe(
+    this.autenticar.iniciarSesion(this.user).subscribe(
       (data) => {
         console.log(data);
         localStorage.setItem('token', data.token);

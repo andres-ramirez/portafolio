@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ApiEscuderiasComponent } from './api-escuderias/api-escuderias.component';
-import { EdicionEscuderiasComponent } from './edicion-escuderias/edicion-escuderias.component';
-import { EdicionPilotosComponent } from './edicion-pilotos/edicion-pilotos.component';
-import { InicioSesionComponent } from './inicio-sesion/inicio-sesion.component';
-import { PrincipalComponent } from './principal/principal.component';
+import { ApiEscuderiasComponent } from './componentes/api-escuderias/api-escuderias.component';
+import { EdicionEscuderiasComponent } from './componentes/edicion-escuderias/edicion-escuderias.component';
+import { EdicionPilotosComponent } from './componentes/edicion-pilotos/edicion-pilotos.component';
+import { InicioSesionComponent } from './componentes/inicio-sesion/inicio-sesion.component';
+import { PrincipalComponent } from './componentes/principal/principal.component';
 import {RutasEdicionGuard} from './rutas-edicion.guard';  
 
 const routes: Routes = [
