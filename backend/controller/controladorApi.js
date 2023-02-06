@@ -17,8 +17,11 @@ exports.obtenerPilotos = async (req, res) => {
 }
 
 exports.editarPiloto = async (req, res) => {	
+
     try {
+
         const { id } = req.params;
+        console.log(req.body);
         const { nombre, nacimiento, pais, campeonatos, podios, victorias, poles, equipo, numeroCoche } = req.body;
 
         let piloto = await modeloPilotos.findById(id);
@@ -45,7 +48,7 @@ exports.editarPiloto = async (req, res) => {
 
     } catch (error) {
         console.log(error);
-        res.status(500).res('Error en el put');
+        res.status(500).res('Error en la actualizacion');
     }
 }
 

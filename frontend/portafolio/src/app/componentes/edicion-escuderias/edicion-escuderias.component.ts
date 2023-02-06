@@ -58,16 +58,12 @@ export class EdicionEscuderiasComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(result => {
       
-      console.log(result);
       this.escuderia = result;
-      console.log(this.escuderia);
       
       
-      this.apiServiceE.editarEscuderia(this.escuderia).subscribe(data=>{+
+      this.apiServiceE.editarEscuderia(this.escuderia).subscribe(data=>{
         console.log(data);
-        
-        console.log(this.escuderia);
-        
+        this.obtenerEscuderias();        
       } )
 
     });
