@@ -28,8 +28,6 @@ export class ApiEscuderiasComponent implements OnInit {
   obtenerEscuderias(){
     this.apiService.obtenerEscuderias().subscribe(data =>{
       this.datosEscuderias= data;
-      console.log(this.datosEscuderias);
-                         
     }, error =>{
       console.log(error);      
     })    
