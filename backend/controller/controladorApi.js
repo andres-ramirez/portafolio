@@ -95,7 +95,8 @@ exports.editarEscuderia = async (req, res) => {
         
     } catch (error) {
         console.log(error);
-        res.status(500).res('Error en el put');        
+        console.log('Error en el put de las escuderias');
+        res.status(500);        
     }
 }
 

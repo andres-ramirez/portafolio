@@ -1,0 +1,77 @@
+<p>
+    <mat-form-field appearance="legacy">
+      <mat-label>Nombre Piloto</mat-label>
+      <input matInput placeholder="Placeholder" [(ngModel)]="data.nombre" disabled>
+      <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+      <mat-hint>Hint</mat-hint>
+    </mat-form-field>
+  </p>
+  <p>
+    <mat-form-field appearance="legacy">
+      <mat-label>Fecha Nacimiento</mat-label>
+      <input matInput placeholder="Placeholder" [ngModel]="data.nacimiento | Edad" (ngModelChange)="data.nacimiento=$event" disabled>
+      <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+      <mat-hint>Hint</mat-hint>
+    </mat-form-field>
+  </p>
+  <p>
+    <mat-form-field appearance="legacy">
+      <mat-label>Pais</mat-label>
+      <input matInput placeholder="Placeholder" [(ngModel)]="data.pais" disabled>
+      <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+      <mat-hint>Hint</mat-hint>
+    </mat-form-field>
+  </p>
+  <p>
+    <mat-form-field appearance="legacy">
+      <mat-label>Campeonatos</mat-label>
+      <input matInput placeholder="Placeholder" [(ngModel)]="data.campeonatos" disabled>
+      <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+      <mat-hint>Hint</mat-hint>
+    </mat-form-field>
+  </p>
+  <p>
+    <mat-form-field appearance="legacy">
+      <mat-label>Podios</mat-label>
+      <input matInput placeholder="Placeholder" [(ngModel)]="data.podios">
+      <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+      <mat-hint>Hint</mat-hint>
+    </mat-form-field>
+  </p>
+  <p>
+    <mat-form-field appearance="legacy">
+      <mat-label>Victorias</mat-label>
+      <input matInput placeholder="Placeholder" [(ngModel)]="data.victorias">
+      <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+      <mat-hint>Hint</mat-hint>
+    </mat-form-field>
+  </p>
+  <p>
+    <mat-form-field appearance="legacy">
+      <mat-label>Poles</mat-label>
+      <input matInput placeholder="Placeholder" [(ngModel)]="data.poles">
+      <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+      <mat-hint>Hint</mat-hint>
+    </mat-form-field>
+  </p>
+  <p>
+    <mat-form-field appearance="legacy">
+      <mat-label>Equipo</mat-label>
+      <input matInput placeholder="Placeholder" [(ngModel)]="data.equipo" disabled>
+      <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+      <mat-hint>Hint</mat-hint>
+    </mat-form-field>
+  </p>
+  <p>
+    <mat-form-field appearance="legacy">
+      <mat-label>Numero de Coche</mat-label>
+      <input matInput placeholder="Placeholder" [(ngModel)]="data.numero_coche" disabled>
+      <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+      <mat-hint>Hint</mat-hint>
+    </mat-form-field>
+  </p>
+  
+  <mat-dialog-actions align="end">
+    <button mat-button [mat-dialog-close]="data">Cancelar</button>
+    <button mat-button [mat-dialog-close]="data" cdkFocusInitial>Guardar</button>
+  </mat-dialog-actions>

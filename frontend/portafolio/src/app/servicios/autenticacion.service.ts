@@ -8,7 +8,12 @@ export class AutenticacionService {
 constructor() { }
 
   public isAuthenticated(): boolean {
-    return !!localStorage.getItem('token');
+    
+    let permiso = false;
+    localStorage.getItem('token') === null ? permiso =false : permiso = true;
+    return permiso;
+    
+    // return !!localStorage.getItem('token');
   }
 
 }

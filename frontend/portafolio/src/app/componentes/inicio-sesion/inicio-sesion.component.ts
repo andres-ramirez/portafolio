@@ -23,11 +23,9 @@ export class InicioSesionComponent implements OnInit {
   }
 
   iniciarSesion(){
-    console.log(this.user);
     
     this.autenticar.iniciarSesion(this.user).subscribe(
       (data) => {
-        console.log(data);
         localStorage.setItem('token', data.token);
         this.router.navigate(['/edicion-pilotos']);
       },

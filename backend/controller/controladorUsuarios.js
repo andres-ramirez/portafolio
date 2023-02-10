@@ -55,7 +55,7 @@ exports.iniciarSesion = async (req, res,) => {
     }
     
     const checkPass = await comparar(pass, user.pass);
-    const tokenSesion = jwt.sign({ id: user._id, role: user.role }, process.env.JWT_SECRET, { expiresIn: "1h", });
+    const tokenSesion = jwt.sign({ id: user._id}, process.env.JWT_SECRET, { expiresIn: '5s' });
 
     if (checkPass) {
       res.send({

@@ -24,11 +24,26 @@
     </div>
 
     <!-- Boton -->
-    <div class="col"> 
-      <button class="btn btn-primary btn-lg btn-block" (click)="inicioSesion()">
-        Iniciar sesión
-      </button>
-    </div>  <!-- /Boton -->
+    <div *ngIf="autenticado; else iniciaSesion" >
+      <div class="col"> 
+        <button class="btn btn-primary btn-lg btn-block" (click)="cerrarSesion()">
+          Cerrar sesión
+        </button>
+        <button class="btn btn-primary btn-lg btn-block" routerLink="/edicion-pilotos">
+          Editar Pilotos
+        </button>
+        <button class="btn btn-primary btn-lg btn-block" routerLink="/edicion-escuderias">
+          Editar Escuderias
+        </button>
+      </div>
+    </div>
+    <ng-template #iniciaSesion>
+      <div class="col"> 
+        <button class="btn btn-primary btn-lg btn-block" (click)="inicioSesion()">
+          Iniciar sesión
+        </button>
+      </div>  <!-- /Boton -->
+    </ng-template>
 
   </div>
 </div> <!-- Fin Selector -->

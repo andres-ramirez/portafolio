@@ -9,7 +9,7 @@ import { ApiEscuderiasComponent } from './componentes/api-escuderias/api-escuder
 import { PipeApiPipe } from './pipes/pipe-edad.pipe';
 import { FormsModule } from '@angular/forms';
 import { InicioSesionComponent } from './componentes/inicio-sesion/inicio-sesion.component';
-import { EdicionPilotosComponent } from './componentes/edicion-pilotos/edicion-pilotos.component';
+import { EdicionPilotosComponent, modalPilotosComponent } from './componentes/edicion-pilotos/edicion-pilotos.component';
 import { EdicionEscuderiasComponent, modalEscuderiasComponent } from './componentes/edicion-escuderias/edicion-escuderias.component';
 import { RutasEdicionGuard } from './rutas-edicion.guard';
 import { JwtInterceptorInterceptor } from './interceptor/jwt-interceptor.interceptor';
@@ -30,7 +30,8 @@ import {MaterialExampleModule} from '../material.module';
     InicioSesionComponent,
     EdicionPilotosComponent,
     EdicionEscuderiasComponent,
-    modalEscuderiasComponent   
+    modalEscuderiasComponent,
+    modalPilotosComponent   
     
   ],
   imports: [
